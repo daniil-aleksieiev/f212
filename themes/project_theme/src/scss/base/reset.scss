@@ -72,6 +72,7 @@ img {
   p {
     margin: 15px 0 30px;
     font-size: 24px;
+    line-height: 1.24em;
     letter-spacing: .3em;
   }
   a {
@@ -79,6 +80,9 @@ img {
     max-width: 24px;
     width: 100%;
     color: #0e76a8;
+    svg {
+      vertical-align: middle;
+    }
   }
   span {
     position: absolute;
