@@ -1,0 +1,4 @@
+baseURL = "http://f212.info"
+languageCode = "en-us"
+theme = "project_theme"
+title = "F212"

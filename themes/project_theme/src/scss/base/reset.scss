@@ -1,0 +1,87 @@
+// This is base reset for global components.
+//
+// Note: If you use a framework that includes base styling then you need to remove this file.
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+*::selection {
+  background: map-deep-get($colors, 'base', 'selection');
+  color: inherit;
+}
+
+body {
+  @include font-smoothing(on);
+  background: map-deep-get($colors, 'base', 'white');
+  color: map-deep-get($colors, 'base', 'lighten-black');
+  font: #{map-get($font-size, 'base')}/#{map-get($line-height, 'base')} #{map-get($fonts, 'base-sans-serif')};
+  min-width: map-get($breakpoints, 'phone-sm');
+  height: 100%;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page-main {
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+// adaptive images
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// hide tel links on desktop
+@media only screen and (min-width: 1025px) {
+    a[href^="tel"], a[href^="skype"], a[href^="sms"] {
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.coming-soon {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: map_get($fonts, 'SanFrancisco');
+  h1 {
+    font-size: 76px;
+    letter-spacing: .2em;
+    font-weight: normal;
+  }
+  p {
+    margin: 15px 0 30px;
+    font-size: 24px;
+    letter-spacing: .3em;
+  }
+  a {
+    display: block;
+    max-width: 24px;
+    width: 100%;
+    color: #0e76a8;
+  }
+  span {
+    position: absolute;
+    bottom: 15px;
+  }
+}
